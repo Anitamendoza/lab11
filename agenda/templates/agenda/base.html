@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab02</title>
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <style>
+        .bg-celeste-claro {
+    background-color: #26b5e5; /* Código de color para el celeste claro */
+}
+    </style>
+</head>
+<body class="container py-5">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+            <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          </a>
+        </div>
+  
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="{% url 'contact_list' %}" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="{% url 'contact_list' %}" class="nav-link px-2">Contactos</a></li>
+        </ul>
+  
+        <div class="col-md-3 text-end">
+            <a href="{% url 'login' %}" class="btn btn-outline-primary me-2">Login</a>
+            <a href="{% url 'login' %}" class="btn btn-primary">Sign-up</a>
+        </div>
+      </header>
+      <div class="p-5 border border-1 shadow rounded bg-celeste-claro text-white">
+        <h1 class="fw-bold text-center">Bienvenido a Mi Agenda</h1>
+
+<p class="lead text-center">
+    Administra tus contactos de manera eficiente y segura. Crea, consulta, actualiza y elimina contactos fácilmente.
+</p>
+      </div>
+
+
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <hr>
+    <footer>
+        <div class="  footer-content text-center">
+            <p >&copy; 2023 Ana Mendoza</p>
+
+        </div>
+    </footer>
+</body>
+</html>
